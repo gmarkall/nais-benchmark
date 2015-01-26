@@ -1,0 +1,189 @@
+Nai's Benchmark 
+Allocating Memory . . . Chunk Size = 67108864 Byte 
+Allocated at 703ea0000
+Allocated at 707ea0000
+Allocated at 70bea0000
+Allocated at 70fea0000
+Allocated at 713ea0000
+Allocated at 717ea0000
+Allocated at 71bea0000
+Allocated at 71fea0000
+Allocated at 723ea0000
+Allocated at 727ea0000
+Allocated at 72bea0000
+Allocated at 72fea0000
+Allocated at 733ea0000
+Allocated at 737ea0000
+Allocated at 73bea0000
+Allocated at 73fea0000
+Allocated at 743ea0000
+Allocated at 747ea0000
+Allocated at 74bea0000
+Allocated at 74fea0000
+Allocated at 753ea0000
+Allocated at 757ea0000
+Allocated at 75bea0000
+Allocated at 75fea0000
+Allocated at 763ea0000
+Allocated at 767ea0000
+Allocated at 76bea0000
+Allocated at 76fea0000
+Allocated at 773ea0000
+Allocated at 777ea0000
+Allocated at 77bea0000
+Allocated at 77fea0000
+Allocated at 783ea0000
+Allocated at 787ea0000
+Allocated at 78bea0000
+Allocated at 78fea0000
+Allocated at 793ea0000
+Allocated at 797ea0000
+Allocated at 79bea0000
+Allocated at 79fea0000
+Allocated at 7a3ea0000
+Allocated at 7a7ea0000
+Allocated at 7abea0000
+Allocated at 7afea0000
+Allocated at 7b3ea0000
+Allocated at 7b7ea0000
+Allocated at 7bbea0000
+Allocated at 7bfea0000
+Allocated at 7c3ea0000
+Allocated at 7c7ea0000
+Allocated at 7cbea0000
+Allocated at 7cfea0000
+Allocated at 7d3ea0000
+Allocated at 7d7ea0000
+Allocated at 7dbea0000
+Allocated at 7dfea0000
+Allocated at 7e3ea0000
+Allocated at 7e7ea0000
+Allocated at 7ebea0000
+Allocated at 7efea0000
+Allocated at 7f3ea0000
+Allocated at 7f7ea0000
+Allocated 62 Chunks 
+Benchmarking DRAM 
+DRAM-Bandwidth of 0. Chunk: 154.164932 GByte/s 
+DRAM-Bandwidth of 1. Chunk: 154.492020 GByte/s 
+DRAM-Bandwidth of 2. Chunk: 154.574020 GByte/s 
+DRAM-Bandwidth of 3. Chunk: 154.529587 GByte/s 
+DRAM-Bandwidth of 4. Chunk: 154.346481 GByte/s 
+DRAM-Bandwidth of 5. Chunk: 154.603638 GByte/s 
+DRAM-Bandwidth of 6. Chunk: 154.576279 GByte/s 
+DRAM-Bandwidth of 7. Chunk: 154.456757 GByte/s 
+DRAM-Bandwidth of 8. Chunk: 154.570587 GByte/s 
+DRAM-Bandwidth of 9. Chunk: 154.529587 GByte/s 
+DRAM-Bandwidth of 10. Chunk: 154.544388 GByte/s 
+DRAM-Bandwidth of 11. Chunk: 154.566025 GByte/s 
+DRAM-Bandwidth of 12. Chunk: 154.645828 GByte/s 
+DRAM-Bandwidth of 13. Chunk: 154.603638 GByte/s 
+DRAM-Bandwidth of 14. Chunk: 154.564896 GByte/s 
+DRAM-Bandwidth of 15. Chunk: 154.601364 GByte/s 
+DRAM-Bandwidth of 16. Chunk: 154.419220 GByte/s 
+DRAM-Bandwidth of 17. Chunk: 154.529587 GByte/s 
+DRAM-Bandwidth of 18. Chunk: 154.570587 GByte/s 
+DRAM-Bandwidth of 19. Chunk: 154.601364 GByte/s 
+DRAM-Bandwidth of 20. Chunk: 154.310135 GByte/s 
+DRAM-Bandwidth of 21. Chunk: 154.604782 GByte/s 
+DRAM-Bandwidth of 22. Chunk: 154.675491 GByte/s 
+DRAM-Bandwidth of 23. Chunk: 154.494278 GByte/s 
+DRAM-Bandwidth of 24. Chunk: 154.389664 GByte/s 
+DRAM-Bandwidth of 25. Chunk: 154.346481 GByte/s 
+DRAM-Bandwidth of 26. Chunk: 154.604782 GByte/s 
+DRAM-Bandwidth of 27. Chunk: 154.382843 GByte/s 
+DRAM-Bandwidth of 28. Chunk: 154.603638 GByte/s 
+DRAM-Bandwidth of 29. Chunk: 154.419220 GByte/s 
+DRAM-Bandwidth of 30. Chunk: 154.347610 GByte/s 
+DRAM-Bandwidth of 31. Chunk: 154.145691 GByte/s 
+DRAM-Bandwidth of 32. Chunk: 154.492020 GByte/s 
+DRAM-Bandwidth of 33. Chunk: 154.456757 GByte/s 
+DRAM-Bandwidth of 34. Chunk: 154.383987 GByte/s 
+DRAM-Bandwidth of 35. Chunk: 154.398743 GByte/s 
+DRAM-Bandwidth of 36. Chunk: 154.569458 GByte/s 
+DRAM-Bandwidth of 37. Chunk: 154.641266 GByte/s 
+DRAM-Bandwidth of 38. Chunk: 154.456757 GByte/s 
+DRAM-Bandwidth of 39. Chunk: 154.164932 GByte/s 
+DRAM-Bandwidth of 40. Chunk: 154.603638 GByte/s 
+DRAM-Bandwidth of 41. Chunk: 154.725708 GByte/s 
+DRAM-Bandwidth of 42. Chunk: 154.717697 GByte/s 
+DRAM-Bandwidth of 43. Chunk: 154.603638 GByte/s 
+DRAM-Bandwidth of 44. Chunk: 154.462433 GByte/s 
+DRAM-Bandwidth of 45. Chunk: 154.640106 GByte/s 
+DRAM-Bandwidth of 46. Chunk: 154.535278 GByte/s 
+DRAM-Bandwidth of 47. Chunk: 154.645828 GByte/s 
+DRAM-Bandwidth of 48. Chunk: 154.503403 GByte/s 
+DRAM-Bandwidth of 49. Chunk: 154.710846 GByte/s 
+DRAM-Bandwidth of 50. Chunk: 154.421494 GByte/s 
+DRAM-Bandwidth of 51. Chunk: 154.786209 GByte/s 
+DRAM-Bandwidth of 52. Chunk: 154.748535 GByte/s 
+DRAM-Bandwidth of 53. Chunk: 154.675491 GByte/s 
+DRAM-Bandwidth of 54. Chunk: 22.321644 GByte/s 
+DRAM-Bandwidth of 55. Chunk: 22.323214 GByte/s 
+DRAM-Bandwidth of 56. Chunk: 22.323071 GByte/s 
+DRAM-Bandwidth of 57. Chunk: 22.325352 GByte/s 
+DRAM-Bandwidth of 58. Chunk: 22.322618 GByte/s 
+DRAM-Bandwidth of 59. Chunk: 22.326847 GByte/s 
+DRAM-Bandwidth of 60. Chunk: 22.324568 GByte/s 
+DRAM-Bandwidth of 61. Chunk: 22.410833 GByte/s 
+Copying between low and low chunks
+DRAM-Bandwidth of 0. Chunk: 73.347519 GByte/s 
+DRAM-Bandwidth of 1. Chunk: 73.351105 GByte/s 
+DRAM-Bandwidth of 2. Chunk: 73.355721 GByte/s 
+DRAM-Bandwidth of 3. Chunk: 73.499687 GByte/s 
+DRAM-Bandwidth of 4. Chunk: 73.446152 GByte/s 
+DRAM-Bandwidth of 5. Chunk: 73.520302 GByte/s 
+DRAM-Bandwidth of 6. Chunk: 73.441010 GByte/s 
+DRAM-Bandwidth of 7. Chunk: 73.488884 GByte/s 
+DRAM-Bandwidth of 8. Chunk: 73.372139 GByte/s 
+DRAM-Bandwidth of 9. Chunk: 73.400391 GByte/s 
+Copying between high and low chunks
+DRAM-Bandwidth of 0. Chunk: 22.401880 GByte/s 
+DRAM-Bandwidth of 1. Chunk: 22.321526 GByte/s 
+DRAM-Bandwidth of 2. Chunk: 22.320980 GByte/s 
+DRAM-Bandwidth of 3. Chunk: 22.321550 GByte/s 
+DRAM-Bandwidth of 4. Chunk: 22.320766 GByte/s 
+DRAM-Bandwidth of 5. Chunk: 22.323809 GByte/s 
+DRAM-Bandwidth of 6. Chunk: 22.321526 GByte/s 
+DRAM-Bandwidth of 7. Chunk: 22.320766 GByte/s 
+DRAM-Bandwidth of 8. Chunk: 73.390633 GByte/s 
+DRAM-Bandwidth of 9. Chunk: 73.457222 GByte/s 
+Copying between high and high chunks
+DRAM-Bandwidth of 0. Chunk: 10.205716 GByte/s 
+DRAM-Bandwidth of 1. Chunk: 10.185635 GByte/s 
+DRAM-Bandwidth of 2. Chunk: 10.187946 GByte/s 
+DRAM-Bandwidth of 3. Chunk: 10.186694 GByte/s 
+Freeing first chunks
+Re-benchmarking upper half of memory
+DRAM-Bandwidth of 31. Chunk: 154.459030 GByte/s 
+DRAM-Bandwidth of 32. Chunk: 154.833084 GByte/s 
+DRAM-Bandwidth of 33. Chunk: 154.753098 GByte/s 
+DRAM-Bandwidth of 34. Chunk: 154.799942 GByte/s 
+DRAM-Bandwidth of 35. Chunk: 154.723404 GByte/s 
+DRAM-Bandwidth of 36. Chunk: 154.834198 GByte/s 
+DRAM-Bandwidth of 37. Chunk: 154.837631 GByte/s 
+DRAM-Bandwidth of 38. Chunk: 154.602493 GByte/s 
+DRAM-Bandwidth of 39. Chunk: 154.641266 GByte/s 
+DRAM-Bandwidth of 40. Chunk: 154.529587 GByte/s 
+DRAM-Bandwidth of 41. Chunk: 154.347610 GByte/s 
+DRAM-Bandwidth of 42. Chunk: 154.644684 GByte/s 
+DRAM-Bandwidth of 43. Chunk: 154.566025 GByte/s 
+DRAM-Bandwidth of 44. Chunk: 154.456757 GByte/s 
+DRAM-Bandwidth of 45. Chunk: 154.657242 GByte/s 
+DRAM-Bandwidth of 46. Chunk: 154.494278 GByte/s 
+DRAM-Bandwidth of 47. Chunk: 154.566025 GByte/s 
+DRAM-Bandwidth of 48. Chunk: 154.638962 GByte/s 
+DRAM-Bandwidth of 49. Chunk: 154.711990 GByte/s 
+DRAM-Bandwidth of 50. Chunk: 154.620743 GByte/s 
+DRAM-Bandwidth of 51. Chunk: 154.711990 GByte/s 
+DRAM-Bandwidth of 52. Chunk: 154.675491 GByte/s 
+DRAM-Bandwidth of 53. Chunk: 154.714264 GByte/s 
+DRAM-Bandwidth of 54. Chunk: 22.325684 GByte/s 
+DRAM-Bandwidth of 55. Chunk: 22.324568 GByte/s 
+DRAM-Bandwidth of 56. Chunk: 22.323332 GByte/s 
+DRAM-Bandwidth of 57. Chunk: 22.323259 GByte/s 
+DRAM-Bandwidth of 58. Chunk: 22.323048 GByte/s 
+DRAM-Bandwidth of 59. Chunk: 22.322645 GByte/s 
+DRAM-Bandwidth of 60. Chunk: 22.322666 GByte/s 
+DRAM-Bandwidth of 61. Chunk: 22.408079 GByte/s 
+Exiting early.
