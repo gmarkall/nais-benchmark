@@ -3,24 +3,22 @@
 #include "helper_math.h"
 #include <stdio.h>
 #include <iostream>
+
 #define CacheCount 3
-__global__ void BenchMarkDRAMKernel(float4* In)
-{
+
+__global__ void BenchMarkDRAMKernel(float4* In) {
     int ThreadID = blockDim.x *blockIdx.x + threadIdx.x ;
 
     float4 Temp = make_float4(1);
 
     Temp += In[ThreadID];
 
-    if (length(Temp) == -12354)
-    In[0] = Temp;
+    if (length(Temp) == -12354) {
+        In[0] = Temp;
+    }
 }
 
-
-
-
-__global__ void BenchMarkCacheKernel(float4* In, int Zero)
-{
+__global__ void BenchMarkCacheKernel(float4* In, int Zero) {
     int ThreadID = blockDim.x *blockIdx.x + threadIdx.x;
 
     float4 Temp = make_float4(1);
@@ -30,17 +28,15 @@ __global__ void BenchMarkCacheKernel(float4* In, int Zero)
         Temp += In[ThreadID + i*Zero];
     }
 
-    if (length(Temp) == -12354)
+    if (length(Temp) == -12354) {
         In[0] = Temp;
+    }
 }
 
-
-
-int main()
-{
+int main() {
     static const int PointerCount = 5000;
 
-    int Float4Count = 8 * 1024 * 1024;
+    int Float4Count = 4 * 1024 * 1024;
     int ChunkSize = Float4Count*sizeof(float4);
     float4* Pointers[PointerCount];
     int UsedPointers = 0;
@@ -53,6 +49,8 @@ int main()
 
         if (Error == cudaErrorMemoryAllocation)
         break;
+
+        printf("Allocated at %llx\n", (long long unsigned)Pointers[UsedPointers]);
 
         cudaMemset(Pointers[UsedPointers], 0, ChunkSize);
         UsedPointers++;
@@ -69,8 +67,87 @@ int main()
     int BenchmarkCount = 10;
 
     printf("Benchmarking DRAM \n");
-    system("pause");
+
     for (int i = 0; i < UsedPointers; i++) {
+        cudaEventRecord(start);
+        for (int j = 0; j < BenchmarkCount; j++)
+            BenchMarkDRAMKernel <<<BlockCount, BlockSize >>>(Pointers[i]);
+
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+
+        float milliseconds = 0;
+        cudaEventElapsedTime(&milliseconds, start, stop);
+
+        float Bandwidth = ((float)(BenchmarkCount * ChunkSize)) / milliseconds/ 1000.f/1000.f;
+        printf("DRAM-Bandwidth of %i. Chunk: %f GByte/s \n", i, Bandwidth);
+    }
+
+    printf("Copying between low and low chunks\n");
+
+    for (int i = 0; i < 10; i++) {
+        cudaEventRecord(start);
+        for (int j = 0; j < BenchmarkCount; j++) {
+            cudaMemcpy(Pointers[i], Pointers[i + 10], ChunkSize, cudaMemcpyDeviceToDevice);
+        }
+
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+
+        float ms = 0;
+        cudaEventElapsedTime(&ms, start, stop);
+        float Bandwidth = ((float)(BenchmarkCount * ChunkSize)) / ms/ 1000.f/1000.f;
+        printf("DRAM-Bandwidth of %i. Chunk: %f GByte/s \n", i, Bandwidth);
+    }
+
+    printf("Copying between high and low chunks\n");
+
+    for (int i = 0; i < 10; i++) {
+        cudaEventRecord(start);
+        for (int j = 0; j < BenchmarkCount; j++) {
+            cudaMemcpy(Pointers[i], Pointers[UsedPointers - i - 1], ChunkSize, cudaMemcpyDeviceToDevice);
+        }
+
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+
+        float ms = 0;
+        cudaEventElapsedTime(&ms, start, stop);
+        float Bandwidth = ((float)(BenchmarkCount * ChunkSize)) / ms/ 1000.f/1000.f;
+        printf("DRAM-Bandwidth of %i. Chunk: %f GByte/s \n", i, Bandwidth);
+    }
+
+    printf("Copying between high and high chunks\n");
+
+    for (int i = 0; i < 4; i++) {
+        cudaEventRecord(start);
+        for (int j = 0; j < BenchmarkCount; j++) {
+            cudaMemcpy(Pointers[UsedPointers - i - 5], Pointers[UsedPointers - i - 1], ChunkSize, cudaMemcpyDeviceToDevice);
+        }
+
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+
+        float ms = 0;
+        cudaEventElapsedTime(&ms, start, stop);
+        float Bandwidth = ((float)(BenchmarkCount * ChunkSize)) / ms/ 1000.f/1000.f;
+        printf("DRAM-Bandwidth of %i. Chunk: %f GByte/s \n", i, Bandwidth);
+    }
+
+    printf("Freeing first chunks\n");
+
+    // Free the first half of memory
+    for (int i = 0; i < UsedPointers / 2; i++) {
+        int error = cudaFree(Pointers[UsedPointers]);
+        if (error != cudaSuccess) {
+            printf("Error freeing memory\n");
+            exit(-1);
+        }
+    }
+
+    printf("Re-benchmarking upper half of memory\n");
+
+    for (int i = UsedPointers / 2; i < UsedPointers; i++) {
         cudaEventRecord(start);
         for (int j = 0; j < BenchmarkCount; j++)
         BenchMarkDRAMKernel <<<BlockCount, BlockSize >>>(Pointers[i]);
@@ -85,11 +162,10 @@ int main()
         printf("DRAM-Bandwidth of %i. Chunk: %f GByte/s \n", i, Bandwidth);
     }
 
+    printf("Exiting early.");
+    exit(0);
 
-    system("pause");
     printf("Benchmarking L2-Cache \n");
-    system("pause");
-
 
     for (int i = 0; i < UsedPointers; i++)
     {
@@ -107,9 +183,6 @@ int main()
         float Bandwidth = (((float)CacheCount* (float)BenchmarkCount * (float)ChunkSize)) / milliseconds / 1000.f / 1000.f;
         printf("L2-Cache-Bandwidth of %i. Chunk: %f GByte/s \n", i, Bandwidth);
     }
-
-
-    system("pause");
 
     cudaDeviceSynchronize();
     cudaDeviceReset();
